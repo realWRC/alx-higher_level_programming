@@ -62,7 +62,7 @@ class Rectangle:
         shape = "Rectangle(" + str(self.__width)
         shape += ", " + str(self.__height) + ")"
         return shape
-    
+
     def __del__(self):
         """Prints a message for every deletion of instance"""
         print("Bye rectangle...")
