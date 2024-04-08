@@ -6,8 +6,8 @@ class Rectangle:
     """Represent a rectangle"""
     def __init__(self, width=0, height=0):
         """Initialises width and height when instance is created"""
-        self.width = width
-        self.height = height
+        self.__width = width
+        self.__height = height
 
     def width(self):
         """Returns width of instance"""
