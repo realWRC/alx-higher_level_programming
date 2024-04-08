@@ -3,7 +3,8 @@
 
 
 class Square:
-    """Class represents a square with size attribute."""
+    """Class represents a square."""
     def ___init___(self, size):
+        """size is a private attribute."""
         self.size = size
     pass
