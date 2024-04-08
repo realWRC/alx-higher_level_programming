@@ -37,5 +37,5 @@ class Square():
                 while j < self.size:
                     print("#", end="")
                     j += 1
-                print("")
+                print()
                 i += 1
