@@ -56,3 +56,9 @@ class Rectangle:
                 if i != self.__height - 1:
                     shape.append("\n")
             return ("".join(shape))
+
+    def __repr__(self):
+        """Return the string representation of instance"""
+        shape = "Rectangle(" + str(self.__width)
+        shape += ", " + str(self.__height) + ")"
+        return shape
