@@ -2,9 +2,8 @@
 """Defines an empty class called Square"""
 
 
-class Square:
+class Square():
     """Class represents a square."""
-    def ___init___(self, size):
+    def __init__(self, size):
         """size is a private attribute."""
-        self.size = size
-    pass
+        self.__size = size
