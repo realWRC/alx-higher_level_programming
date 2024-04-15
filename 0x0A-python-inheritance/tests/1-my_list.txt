@@ -1,0 +1,47 @@
+Test file for ``1-my_list`` module
+==================================
+
+Using ``MyList``
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Testing:
+    
+    >>> my_list = MyList()
+
+    >>> my_list
+    []
+
+    >>> my_list.append(9)
+
+    >>> my_list.append(6)
+
+    >>> my_list.append(2)
+
+    >>> my_list
+    [9, 6, 2]
+
+    >>> my_list.print_sorted()
+    [2, 6, 9]
+
+    >>> my_list
+    [9, 6, 2]
+
+    >>> my_list = MyList("feadcb")
+
+    >>> my_list
+    ['f', 'e', 'a', 'd', 'c', 'b']
+
+    >>> my_list.print_sorted()
+    ['a', 'b', 'c', 'd', 'e', 'f']
+
+    >>> x_list = MyList()
+
+    >>> x_list.print_sorted()
+    []
+
+    >>> y_list = MyList([5, 6, 1])
+
+    >>> y_list.print_sorted()
+    [1, 5, 6]
+
