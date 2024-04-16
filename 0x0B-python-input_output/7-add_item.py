@@ -20,7 +20,7 @@ if len(sys.argv) > 1:
     try:
         data = load_from_json_file(savefile)
     except Exception as e:
-        print(e)
+        save_to_json_file(data, savefile)
     for item in range(1, len(sys.argv)):
         data.append(sys.argv[item])
     save_to_json_file(data, savefile)
