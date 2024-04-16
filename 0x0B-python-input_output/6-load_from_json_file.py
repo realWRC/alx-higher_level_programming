@@ -11,7 +11,7 @@ import json
 def load_from_json_file(filename):
     """
     Function that returns the python object representation
-    of a JSON string.
+    of a JSON string from a JSON file.
     """
     with open(filename, mode='r') as _file:
         data = _file.read()
