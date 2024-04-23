@@ -92,5 +92,7 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Returns formated string of object attributes """
-        string = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
-        + "- {}/{}".format(self.__width, self.__height)
+        string = ("[Rectangle] ({}) {}/{} "
+                  "- {}/{}".format(self.id, self.__x, self.__y,
+                                   self.__width, self.__height))
+        return string
