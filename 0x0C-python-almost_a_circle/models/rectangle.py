@@ -96,3 +96,18 @@ class Rectangle(Base):
                   "- {}/{}".format(self.id, self.__x, self.__y,
                                    self.__width, self.__height))
         return string
+
+    def update(self, *args, **kwargs):
+        """ Updates the attribute of class instance """
+        if len(args) == 0:
+            for key, value in kwargs.items():
+                self.__setattr__(key, value)
+            return
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[2]
+            self.x = args[3]
+            self.y = args[4]
+        except IndexError:
+            pass
