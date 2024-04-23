@@ -89,3 +89,8 @@ class Rectangle(Base):
             for width in range(0, self.__width):
                 print("#", end="")
             print()
+
+    def __str__(self):
+        """ Returns formated string of object attributes """
+        string = "[Rectangle] ({}) {}/{} ".format(self.id, self.__x, self.__y)
+        + "- {}/{}".format(self.__width, self.__height)
