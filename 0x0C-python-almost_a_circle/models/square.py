@@ -36,3 +36,20 @@ class Square(Rectangle):
         string = "[Square] ({}) {}/{} - {}".format(
                  self.id, self.x, self.y, self.__width)
         return string
+
+    def update(self, *args, **kwargs):
+        """ Method for updating attributes """
+        if len(args):
+            for item, argument in enumerate(args):
+                if item == 0:
+                    self.id = argument
+                elif item == 1:
+                    self.size = argument
+                elif item == 2:
+                    self.x = argument
+                elif item == 3:
+                    self.y = argument
+        else:
+            for key, value in kwargs.items():
+                if hasattr(self, key) is True:
+                    setattr(self, key, value)
