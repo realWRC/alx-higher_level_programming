@@ -114,7 +114,11 @@ class Rectangle(Base):
                     self.__x = value
                 if key == "y":
                     self.__y = value
-            
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of class"""
+        return {'id': self.id, 'width': self.__width, 'height': self.__height,
+                'x': self.__x, 'y': self.__y}
 
     def __str__(self):
         """Returns string representation of class"""
