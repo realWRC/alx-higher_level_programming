@@ -14,10 +14,10 @@ class Rectangle(Base):
         self.validate("height", height)
         self.validate("x", x)
         self.validate("y", y)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
         super().__init__(id)
 
     @property
