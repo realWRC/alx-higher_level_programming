@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defines Unit tests for the Base subclass Rectangle"""
 
 import unittest
 from models.base import Base
@@ -48,6 +49,14 @@ class TestRectangle(unittest.TestCase):
             r2 = Rectangle("string", 10)
         with self.assertRaises(TypeError):
             r2 = Rectangle(10, "string")
+
+    def test_area(self):
+        r1 = Rectangle(5, 5)
+        self.assertEqual(r1.area(), 25)
+        r2 = Rectangle(10, 5)
+        self.assertEqual(r2.area(), 50)
+        r3 = Rectangle(8, 7, 0, 0, 12)
+        self.assertEqual(r3.area(), 56)
 
 
 if __name__ == "__main__":

@@ -9,11 +9,11 @@ class Rectangle(Base):
     subclass of class Base
     """
     def __init__(self, width, height, x=0, y=0, id=None):
-        """Initialises and validates class info"""
+        """Initialises and validates class info
         self.validate("width", width)
         self.validate("height", height)
         self.validate("x", x)
-        self.validate("y", y)
+        self.validate("y", y) """
         self.__width = width
         self.__height = height
         self.__x = x
@@ -73,3 +73,7 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(attribute))
         if (attribute == 'width' or attribute == 'height') and value <= 0:
             raise ValueError("{} must be > 0".format(attribute))
+
+    def area(self):
+        """ Calculates the area of a rectangle """
+        return self.__width * self.__height
