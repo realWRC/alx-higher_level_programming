@@ -25,6 +25,6 @@ class Base:
             return "[]"
         if type(list_dictionaries) != list:
             raise TypeError("list_dictionaries must be a list of dictionries")
-        if all(type(element) != dict for element in list_dictionaries):
+        if not all(type(element) == dict for element in list_dictionaries):
             raise TypeError("list_dictionaries must be a list of dictionries")
         return json.dumps(list_dictionaries)
