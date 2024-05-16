@@ -40,3 +40,11 @@ class Base:
         name = cls.__name__ + ".json"
         with open(name, 'w') as j_file:
             j_file.write(data)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Converts JSON string to List """
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
