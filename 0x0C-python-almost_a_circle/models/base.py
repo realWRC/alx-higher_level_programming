@@ -48,3 +48,15 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Creates a copy of an instance """
+        if type(dictionary) != dict:
+            raise TypeError("dictionaray must be of type dict")
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        if cls.__name__ == "Square":
+            dummy = cls(1)
+        cls.update(dictionary)
+        return dummy
