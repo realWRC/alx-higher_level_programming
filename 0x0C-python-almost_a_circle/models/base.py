@@ -43,7 +43,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ Converts JSON string to List """
+        """ Converts JSON string to list """
         if json_string is None or json_string == "":
             return []
         else:
@@ -60,3 +60,15 @@ class Base:
             dummy = cls(1)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """ Loads objects from JSON file """
+        name = cls.__name__ + ".json"
+        with open(name, 'r') as js_file:
+            string = js_file.read()
+        obj_list = cls.from_json_string(string)
+        objects = []
+        for obj in obj_list:
+            objects.append(cls.create(**obj))
+        return objects
