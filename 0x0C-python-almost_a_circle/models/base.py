@@ -4,6 +4,7 @@ Module base: Defines class Base
 """
 
 import json
+import os
 
 
 class Base:
@@ -65,10 +66,12 @@ class Base:
     def load_from_file(cls):
         """ Loads objects from JSON file """
         name = cls.__name__ + ".json"
-        with open(name, 'r') as js_file:
-            string = js_file.read()
-        obj_list = cls.from_json_string(string)
         objects = []
-        for obj in obj_list:
-            objects.append(cls.create(**obj))
+        if os.path.exists(name):
+            with open(name, 'r') as js_file:
+                string = js_file.read()
+            obj_list = cls.from_json_string(string)
+            objects = []
+            for obj in obj_list:
+                objects.append(cls.create(**obj))
         return objects
