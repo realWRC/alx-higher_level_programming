@@ -1,16 +1,11 @@
 #!/usr/bin/node
 // Definse empty class Square that defines a Square object.
-const Rectangle = require('./4-rectangle');
+const superSquare = require('./5-square');
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-    this.size = size;
-  }
-
+class Square extends superSquare {
   charPrint (c = 'X') {
-    for (let i = 0; i < this.size; i++) {
-      console.log(c.repeat(this.size));
+    for (let i = 0; i < this.height; i++) {
+      console.log(c.repeat(this.width));
     }
   }
 }
