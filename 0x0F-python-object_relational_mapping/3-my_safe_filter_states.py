@@ -11,11 +11,17 @@ from sys import argv
 
 if __name__ == '__main__':
 
+    host_name = 'localhost'
+    port_number = 3306
+    user_name = argv[1]
+    password = argv[2]
+    db_name = argv[3]
+
     try:
         db_connector = MySQLdb.connect(
-            host='localhost', port=3306,
-            user=argv[1], passwd=argv[2],
-            db=argv[3], charset="utf8"
+            host=host_name, port=port_number,
+            user=user_name, passwd=password,
+            db=db_name, charset="utf8"
         )
 
         cur = db_connector.cursor()
