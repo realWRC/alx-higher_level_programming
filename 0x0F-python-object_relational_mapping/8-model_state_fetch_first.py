@@ -30,8 +30,8 @@ if __name__ == "__main__":
         session = Session()
 
         states = session.query(State).order_by(State.id).first()
-        if state is not None:
-            print("{0}: {1}".format(state.id, state.name))
+        if states is not None:
+            print("{0}: {1}".format(states.id, states.name))
         else:
             print("Nothing")
 
