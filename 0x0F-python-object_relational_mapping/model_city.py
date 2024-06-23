@@ -7,6 +7,7 @@ instance Base = declarative_base()
 from model_state import Base, State
 from sqlalchemy import Column, Integer, String
 
+
 class City(Base):
     """Mapped City object"""
 
