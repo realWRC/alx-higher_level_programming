@@ -4,18 +4,19 @@ script that lists all State objects from the database hbtn_0e_6_usa
 """
 
 from model_state import Base, State
+from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
-if __name__ = "__main__":
+if __name__ == "__main__":
     """
     lists all State objects from the
     database hbtn_0e_6_usa
     """
 
     host = 'localhost'
-    port = '3306'
+    port = 3306
     username = argv[1]
     password = argv[2]
     database = argv[3]
@@ -28,7 +29,7 @@ if __name__ = "__main__":
         session = Session()
         states = session.query(State).order_by(State.id).all()
         for state in states:
-            print("{}: {}".format(state.id, state.name))
+            print("{0}: {1}".format(state.id, state.name))
 
     except SQLAlchemyError as e:
         print(f"An error occured: {e}")
