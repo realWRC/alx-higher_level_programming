@@ -8,25 +8,31 @@ from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker
 from sys import argv
 
-host = 'localhost'
-port = '3306'
-username = argv[1]
-password = argv[2]
-database = argv[3]
+if __name__ = "__main__":
+    """
+    lists all State objects from the
+    database hbtn_0e_6_usa
+    """
 
-try:
-    engine = create_engine(f"mysql+mysqldb://{username}:{password}@{host}\
-    :{port}/{database}")
+    host = 'localhost'
+    port = '3306'
+    username = argv[1]
+    password = argv[2]
+    database = argv[3]
 
-    Session = sessionmaker(bind=engine)
-    session = Session()
-    states = session.query(State).order_by(State.id).all()
-    for state in states:
-        print("{}: {}".format(state.id, state.name))
+    try:
+        engine = create_engine(f"mysql+mysqldb://{username}:{password}@{host}\
+        :{port}/{database}")
 
-except SQLAlchemyError as e:
-    print(f"An error occured: {e}")
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        states = session.query(State).order_by(State.id).all()
+        for state in states:
+            print("{}: {}".format(state.id, state.name))
 
-finally:
-    if session:
-        session.close()
+    except SQLAlchemyError as e:
+        print(f"An error occured: {e}")
+
+    finally:
+        if session:
+            session.close()
