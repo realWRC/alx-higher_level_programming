@@ -5,7 +5,7 @@ instance Base = declarative_base()
 """
 
 from model_state import Base, State
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 
 class City(Base):

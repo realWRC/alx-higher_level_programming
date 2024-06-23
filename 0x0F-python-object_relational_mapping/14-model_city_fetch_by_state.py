@@ -4,6 +4,7 @@ script that lists all State objects from the database hbtn_0e_6_usa
 """
 
 from model_state import Base, State
+from model_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import sessionmaker
@@ -30,7 +31,7 @@ if __name__ == "__main__":
         session = Session()
 
         country = session.query(City, State).join(State)
-        for city, states in country.all():
+        for city, state in country.all():
             print("{}: ({}) {}".format(state.name, city.id, city.name))
 
         session.commit()
