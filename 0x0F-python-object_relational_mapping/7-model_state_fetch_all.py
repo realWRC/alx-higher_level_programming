@@ -22,12 +22,12 @@ if __name__ == "__main__":
     database = argv[3]
 
     try:
-        engine = create_engine(f"mysql+mysqldb://{username}:{password}@{host}\
-        :{port}/{database}")
-
+        string = "mysql+mysqldb://{}:{}@{}:\
+        {}/{}".format(username, password, host, port, database)
+        engine = create_engine(string)
         Session = sessionmaker(bind=engine)
         session = Session()
-        states = session.query(State).order_by(State.id).all()
+        states = session.query(State).order_by(State.id)
         for state in states:
             print("{0}: {1}".format(state.id, state.name))
 
