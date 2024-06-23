@@ -18,7 +18,7 @@ if __name__ == '__main__':
 
         cur = db_connector.cursor()
         cur.execute(
-            "SELECT * FROM states WHERE name LIKE '%N' \
+            "SELECT * FROM states WHERE name LIKE BINARY '%N' \
             ORDER BY states.id ASC"
         )
         rows = cur.fetchall()
