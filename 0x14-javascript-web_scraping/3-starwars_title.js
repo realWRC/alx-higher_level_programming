@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const r = require('request');
-const star_wars = process.argv[2];
-const url = `https://swapi-api.alx-tools.com/api/films/${star_wars}`;
+const starwars = process.argv[2];
+const url = `https://swapi-api.alx-tools.com/api/films/${starwars}`;
 
 r.get(url, (err, response, body) => {
   if (err) {
